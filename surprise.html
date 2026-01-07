@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="surprise-page">
+  <h1 class="surprise-title">🎉 Surprise 🎉</h1>
+
+  <!-- CAKE -->
+  <div class="cake">
+    <div class="plate"></div>
+    <div class="layer layer-bottom"></div>
+    <div class="layer layer-middle"></div>
+    <div class="layer layer-top"></div>
+    <div class="candle">
+      <div class="flame" id="flame"></div>
+    </div>
+  </div>
+
+  <!-- LYRICS BOX -->
+  <div class="lyrics-box">
+    <p>"Light the candles and make a wish. They will come true. Happy Birthday to you."
+      <br> - HBD by svt
+    </p>
+   
+  </div>
+
+  <!-- Button to Memories Page -->
+  <a href="memory.html" class="btn">Go to Memories</a>
+
+  <script>
+    const flame = document.getElementById("flame");
+    flame.addEventListener("click", () => {
+      flame.style.display = "none"; // blow out
+    });
+  </script>
+</body>
+</html>
+
+      

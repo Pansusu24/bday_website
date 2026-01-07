@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Extras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fun-page">
+  <h1 class="fun-title">🎈 Fun Extras 🎈</h1>
+
+  <section class="fun-section">
+    <h2>🎁 Mini Game: Catch the Confetti!</h2>
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+    <p class="game-instructions">🎉 Move your mouse to catch the falling confetti!</p>
+  </section>
+
+  <a href="index.html" class="btn">Back to Home</a>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const basket = { x: 180, y: 260, width: 50, height: 20 };
+    let confetti = [];
+    let score = 0;
+
+    function newConfetti() {
+      const colors = ['#ff80ab', '#ffb6c1', '#87cefa', '#b19cd9', '#ffd700'];
+      confetti.push({
+        x: Math.random() * 380,
+        y: 0,
+        size: 10,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+
+    function drawBasket() {
+      ctx.fillStyle = '#ff4081';
+      ctx.fillRect(basket.x, basket.y, basket.width, basket.height);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(basket.x, basket.y, basket.width, basket.height);
+    }
+
+    function drawConfetti() {
+      confetti.forEach(c => {
+        ctx.fillStyle = c.color;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function updateConfetti() {
+      confetti.forEach((c, i) => {
+        c.y += 2;
+        if (
+          c.y + c.size > basket.y &&
+          c.x > basket.x &&
+          c.x < basket.x + basket.width
+        ) {
+          score++;
+          confetti.splice(i, 1);
+        }
+        if (c.y > 300) confetti.splice(i, 1);
+      });
+    }
+
+    function drawScore() {
+      ctx.fillStyle = '#333';
+      ctx.font = '16px Poppins';
+      ctx.fillText('Score: ' + score, 10, 20);
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBasket();
+      drawConfetti();
+      updateConfetti();
+      drawScore();
+      requestAnimationFrame(loop);
+    }
+
+    setInterval(newConfetti, 700);
+    loop();
+
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      basket.x = e.clientX - rect.left - basket.width / 2;
+    });
+  </script>
+</body>
+</html>
+

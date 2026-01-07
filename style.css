@@ -1,0 +1,313 @@
+/* General body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+#main{
+    background-color: #e09bee;
+}
+/* Homepage container */
+.container {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+input[type="text"] {
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 15px auto;
+  display: block;
+}
+
+
+/* Button styling */
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #d76dec;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background: #e6a5f3;
+}
+
+/* Birthday page background */
+.birthday-page {
+  background: linear-gradient(135deg,#e09bee );
+  color: white;
+  text-align: center;
+}
+
+/* Message box on birthday page */
+.message {
+  background: rgba(0,0,0,0.4);
+  padding: 40px;
+  border-radius: 20px;
+}
+body.surprise-page {
+  background: #e09bee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.surprise-title {
+  margin-top: 20px;
+  font-size: 3rem;
+  color: white;
+}
+/* Cake */
+.cake {
+  position: relative;
+  margin-top: 40px;
+  width: 200px;
+  height: 220px;
+}
+
+.plate {
+  width: 240px;
+  height: 20px;
+  background: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+}
+
+/* Layers */
+.layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  border: 4px solid white;
+}
+
+.layer-bottom {
+  bottom: 20px;
+  width: 200px;
+  height: 60px;
+  background: #93A9D1;
+}
+
+.layer-middle {
+  bottom: 80px;
+  width: 160px;
+  height: 50px;
+  background: #f7CACA;
+}
+
+.layer-top {
+  bottom: 130px;
+  width: 120px;
+  height: 40px;
+  background: #93A9D1;
+}
+
+/* Candle */
+.candle {
+  position: absolute;
+  bottom: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 50px;
+  background: #fff8dc;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.flame {
+  width: 15px;
+  height: 25px;
+  background: radial-gradient(ellipse at center, #ffeb3b 0%, #ff9800 70%, transparent 100%);
+  border-radius: 50% 50% 50% 50%;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.2s infinite;
+  cursor: pointer;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); opacity: 1; }
+  50% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* Lyrics Box */
+.lyrics-box {
+  margin-top: 40px;
+  padding: 18px;
+  background: #fff;
+  border: 2px solid #ff80ab;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 300px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button */
+.btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #d76dec;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e6a5f3;
+}
+/* ===== GENERAL STYLES ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #e09bee);
+  color: #333;
+  overflow-x: hidden;
+}
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+/* ===== MEMORIES PAGE ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  padding: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+/* ===== WISH WALL ===== */
+form {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+form input, form textarea {
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+#wishBoard {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+
+.wish-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+body.fun-page {
+  background: linear-gradient(180deg, #e09bee);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fun-title {
+  margin-top: 50px;
+  font-size: 3rem;
+  color: white;
+  animation: bounce 2s infinite;
+  text-align: center;
+}
+
+.fun-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  margin: 25px 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+canvas {
+  border: 2px solid #ff80ab;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: #fffdfd;
+}
+
+.game-instructions {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #d76dec;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e6a5f3;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

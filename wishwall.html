@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish Wall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="wish-page">
+
+  <h1>💌 Leave Your Wishes 💌</h1>
+
+  <form id="wishForm">
+    <input type="text" id="name" placeholder="Your name" required>
+    <textarea id="wish" placeholder="Write your wish..." required></textarea>
+    <button type="submit">Post Wish</button>
+  </form>
+
+  <div id="wishBoard"></div>
+
+  <div class="button-container">
+    <button onclick="location.href='game.html'">Go to Fun Extras 🎉</button>
+  </div>
+
+  <script>
+    const form = document.getElementById('wishForm');
+    const board = document.getElementById('wishBoard');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const wish = document.getElementById('wish').value;
+
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+      card.innerHTML = `<h3>${name}</h3><p>${wish}</p>`;
+      board.appendChild(card);
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
+
+      
